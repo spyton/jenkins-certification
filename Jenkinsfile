@@ -1,6 +1,4 @@
-pipeline  {
-	agent any
-	stages {
+node {
      
     stage ('build') {
         steps {
@@ -29,8 +27,3 @@ pipeline  {
 
 	}
 	
-
-
-
-
-}
