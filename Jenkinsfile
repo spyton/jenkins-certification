@@ -1,20 +1,16 @@
-node {
-     
-    stage ('build') {
-        sh 'echo build'
+pipeline {
+    agent any
+    environment { 
+        CC = 'clang'
     }
-
-    stage ('test'){
-        sh 'echo test'
-
+    stages {
+        stage('Example') {
+            environment { 
+                DEBUG_FLAGS = '-g'
+            }
+            steps {
+                sh 'printenv'
+            }
+        }
     }
-    
-    stage ('deploy') {
-        sh 'echo deploy'
-
-    }
-
-
-
-	}
-	
+}
